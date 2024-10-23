@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="HomePagePROJEKCSS.css">
+    <title>Ellra Collection</title>
+</head>
+<body>
+    <div class="company-name">Ellra Fashion</div>
+    <nav class="navbar">
+        <div class="logo">Be happy, be fashionable</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="CorporateInformation.html">Corporate Information</a></li>
+            <li><a href="https://www.instagram.com/ikaaayum/#">Contact Us</a></li>
+        </ul>
+        <div class="dropdown" style="text-align:center;">
+            <button class="dropbtn">▼</button>
+            <div class="dropdown-content">
+                <h3>OUR DESIGN</h3>
+                <h3>Pants</h3>
+                <a href="BaggyJeans.html">Baggy Jeans</a>
+                <a href="SkinnyJeans.html">Skinny Jeans</a>
+                <a href="Kulot.html">Kulot</a>
+                <h3>Shirt</h3>
+                <a href="T-Shirt.html">T-Shirt</a>
+                <a href="Sweater.html">Sweater</a>
+                <h3>Dress</h3>
+                <a href="SunDress.html">Sun dress</a>
+                <a href="HijabiSpecial.html">Special hijabi</a>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar">a</span>
+            <span class="bar">b</span>
+            <span class="bar">c</span>
+        </div>
+    </nav>
+
+    <div class="slider-container">
+        <h1 style="align-items: center; position: absolute; left: 10%; top: 40%; color:white; text-shadow: #000000;">Overview</h1>
+        <div class="slider">
+            <div class="slide">
+                    <img src="Gambar2.jpg"/>
+                </a>
+            </div>
+            <div class="slide">
+                    <img src="gambar4.jpg"/>
+                </a>
+            </div>
+            <div class="slide">
+                    <img src="gambar5.webp"/>
+                </a>
+            </div>
+        </div>
+            <button class="prevslide" onclick="prevSlide()"><svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewbox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+	.st0{fill:#134563;}
+</style><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline class="st0" id="Fill-35" points="-199.1,-289 -212.9,-302.7 -199.1,-316.4 -197.1,-314.4 -208.9,-302.7 -197.1,-291      -199.1,-289    "></polyline></g></g></svg></button>
+            <button class="nextslide right" onclick="nextSlide()"><svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewbox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+	.st0{fill:#134563;}
+</style><g><g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline class="st0" id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    "></polyline></g></g></svg></button>
+
+    </div>
+    <div class="content">
+        <img src="gambar 6.jpg">
+        <div class="text">
+            <p style="text-align:start;">
+                Perusahaan Ellra Collection menyediakan tekstil berkualitas impor yang diambil dari negeri China. Selain itu, kami memastikan telah mengikuti tren terbru anak-anak gen Z, dan memiliki banyak variasi baju dengan style yang berbeda-beda untuk menjangkau lebih banyak orang. Ellra Collection memiliki ciri khas yang tidak dimmiliki oleh perusahaan kebanyakan yaitu kualitas terbaik denga harga murah dan perusahaan yang dapat meraih masyarakat dengan mudah.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="text">
+        <p style="text-align: start; margin-right: 20px;">
+            Produk terbaik dari Ellra Collection merupakan <b>sundress</b>, salah satu <i>best-seller</i> yang laris manis di pasaran dikarenakan tekstilnya yang terasa dingin dan tidak membuat keringetan. Warnanya bervariasi, cocok untuk anak kecil maupun wanita lanjut usia. Ukurannya tak kalah banyak; Sundress Ellra Collection mencakup ukuran SS hingga XXL. Salah satu desain terlarisnya adalah bunga matahari; dimana warna kontras uning bertemu dengan putih sehingga menciptakan kesan ceria dan semangat. 
+        </p>
+    </div>
+    <img src="Gambar3.jpg">
+</div>
+<div class="footer-navigation">
+    <a href="mailto:example@example.com" target="_blank">
+        <img src="Email.png"
+            alt="Email">
+    </a>
+    <a href="#shopping" target="_blank">
+        <img src="ShoppingBag.jpg"
+            alt="Tas Belanja">
+    </a>
+    <a href="https://www.instagram.com/ikaaayum/#" target="_blank">
+        <img src="Instagram.png"
+            alt="Instagram">
+    </a>
+</div>
+
+    <script>
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+const slider = document.querySelector(".slider");
+const slideItems = document.querySelectorAll(".slide");
+
+let index = 0;
+let interval;
+let touchStartX = 0;
+let touchEndX = 0;
+
+function startSlide() {
+    interval = setInterval(nextSlide, 5000);
+}
+
+function nextSlide() {
+    index = (index + 1) % slideItems.length;
+    updateSlide();
+}
+
+function prevSlide() {
+    index = (index - 1 + slideItems.length) % slideItems.length;
+    updateSlide();
+}
+
+function updateSlide() {
+    slider.style.transform ='translateX(-${index * 100}%)';
+}
+
+slider.addEventListener("mouseenter", () => clearInterval(interval));
+slider.addEventListener("mouseleave", startSlide);
+
+slider.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+const SWIPE_THRESHOLD = 100;
+
+if (touchEndX - touchStartX > SWIPE_THRESHOLD) {
+    prevSlide();
+} else if (touchStartX - touchEndX > SWIPE_THRESHOLD) {
+    nextSlide();
+}
+}
+
+startSlide();
+    /*]]>*/
+
+    </script>
+</body>
+<footer>
+    <p style="margin-top:0;">&copy; 2024 - All Right Reserved</p>
+    <p>ELLRA COMPANY</p>  
+</footer>
+</html

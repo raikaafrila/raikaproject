@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baggy Jeans Collection</title>
+    <link rel="stylesheet" type="text/css" href="BaggyJeansCSS.css">
+
+<header>
+    <div class="company-name">Ellra Fashion</div>
+    <nav class="navbar">
+        <div class="logo">Be happy, be fashionable</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="CorporateInformation.html">Corporate Information</a></li>
+            <li><a href="https://www.instagram.com/ikaaayum/#">Contact Us</a></li>
+        </ul>
+        <div class="dropdown" style="text-align:center;">
+            <button class="dropbtn">▼</button>
+            <div class="dropdown-content">
+                <h3>OUR DESIGN</h3>
+                <h3>Pants</h3>
+                <a href="BaggyJeans.html">Baggy Jeans</a>
+                <a href="SkinnyJeans.html">Skinny Jeans</a>
+                <a href="Kulot.html">Kulot</a>
+                <h3>Shirt</h3>
+                <a href="T-Shirt.html">T-Shirt</a>
+                <a href="Sweater.html">Sweater</a>
+                <h3>Dress</h3>
+                <a href="SunDress.html">Sun dress</a>
+                <a href="HijabiSpecial.html">Special hijabi</a>
+            </div>
+        </div>
+</header>
+</head>
+    <div class="collection-title">
+        Baggy Jeans Collection
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="SkinnyJeansPhoto1.jpg" width="150px" height="150px">
+            <a class="open-popup">Purchase Now</a>
+        </div>
+        <div class="grid-item">
+            <img src="SkinnyJeansPhoto2.jpg" width="150px" height="150px">
+            <a class="open-popup">Purchase Now</a>
+        </div>
+        <div class="grid-item">
+            <img src="SkinnyJeansPhoto3.jpg" width="150px" height="150px">
+            <a class="open-popup">Purchase Now</a>
+        </div>
+        <div class="grid-item">
+            <img src="SkinnyJeansPhoto4.jpg" width="150px" height="150px">
+            <a class="open-popup">Purchase Now</a>
+        </div>
+        <div class="grid-item">
+            <img src="SkinnyJeansPhoto5.jpg" width="150px" height="150px">
+            <a class="open-popup">Purchase Now</a>
+        </div>
+        <div class="grid-item">
+            <img src="SkinnyJeansPhoto6.jpg" width="150px" height="150px">
+            <a class="open-popup">Purchase Now</a>
+        </div>
+        <div class="grid-item">
+            <img src="SkinnyJeansPhoto7.jpg" width="150px" height="150px">
+            <a class="open-popup">Purchase Now</a>
+        </div>
+        <div class="grid-item">
+            <img src="SkinnyJeansPhoto8.jpg" width="150px" height="150px">
+            <a class="open-popup">Purchase Now</a>
+        </div>
+        <div class="grid-item">
+            <img src="SkinnyJeansPhoto9.jpg" width="150px" height="150px">
+            <a class="open-popup">Purchase Now</a>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="popup-form" id="popupForm">
+        <h2>Shop Redirect Form</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" placeholder="Enter your address">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <label for="color">Preferred Color:</label>
+        <select id="color">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="medium">Medium</option>
+        </select>
+
+        <button class="close-btn" onclick="closePopup()">Close</button>
+        <button class="close-btn" onclick="confirmPopup()">Confirm Purchase</button>
+    </div>
+
+    <div class="footer-navigation">
+        <a href="mailto:example@example.com" target="_blank">
+            <img src="Email.png"
+                alt="Email">
+        </a>
+        <a href="#shopping" target="_blank">
+            <img src="ShoppingBag.jpg"
+                alt="Tas Belanja">
+        </a>
+        <a href="https://www.instagram.com/ikaaayum/#" target="_blank">
+            <img src="Instagram.png"
+                alt="Instagram">
+        </a>
+    </div>
+    <footer>
+        <p style="margin-top:0;">&copy; 2024 - All Right Reserved</p>
+        <p>ELLRA COMPANY</p>  
+    </footer>
+    <script>
+          const openPopupLinks = document.querySelectorAll('.open-popup');
+        const popupForm = document.getElementById('popupForm');
+        const overlay = document.querySelector('.overlay');
+
+        openPopupLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                popupForm.style.display = 'block';
+                overlay.style.display = 'block';
+            });
+        });
+        
+        function confirmPopup() {
+            popupForm.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+        function closePopup() {
+            popupForm.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        overlay.addEventListener('click', confirmPopup);
+        overlay.addEventListener('click', closePopup);
+    </script>
+</body>
+</html>
